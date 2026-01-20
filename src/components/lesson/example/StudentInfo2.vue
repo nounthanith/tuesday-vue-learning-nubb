@@ -124,7 +124,7 @@ function addStudent () {
     region: region.value,
     country: country.value,
   });
-  // clearForm();
+  clearForm();
   errorMessage.value = "";
 }
 
