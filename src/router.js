@@ -5,6 +5,7 @@ const router = createRouter({
 	routes: [
 		{
 			path: "/home",
+			name: "Home",
 			component: () => import("./components/Ch7/Home.vue"),
 			children: [
 				{
@@ -40,5 +41,11 @@ const router = createRouter({
 		}
 	]
 });
+
+router.beforeEach((to, from, next) => {
+	const isLogin = false;
+	if (to.name != "Login") next({name: "Login"})
+	else next()
+})
 
 export default router;
